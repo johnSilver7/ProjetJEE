@@ -17,9 +17,9 @@ class Musee {
         nom blank:false,nullable:false
         horairesOuverture blank: false,nullable: false
         telephone blank: false,nullable: false
-        accesBus blank: false,nullable: false
         accesMetro blank: false,nullable: false
         adresse blank:false,nullable: false
         site blank: false,nullable: false
+        gestionnaire blank:false,nullable: false
     }
 }

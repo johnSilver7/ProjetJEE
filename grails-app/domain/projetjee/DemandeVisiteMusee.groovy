@@ -9,6 +9,7 @@ class DemandeVisiteMusee {
     static constraints = {
 
         dateDemande blank: false, nullable: false
-
+        musee blank:false,nullable: false
+        demandeVisite blank:false,nullable: false
     }
 }
