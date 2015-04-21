@@ -1,11 +1,14 @@
 package projetjee
 
+import org.apache.tools.ant.taskdefs.condition.Http
+
 class Musee {
 
     String nom
     String horairesOuverture
     String telephone
     String accesMetro
+    String  site
     Gestionnaire gestionnaire
     Adresse adresse
 
@@ -17,5 +20,6 @@ class Musee {
         accesBus blank: false,nullable: false
         accesMetro blank: false,nullable: false
         adresse blank:false,nullable: false
+        site blank: false,nullable: false
     }
 }
