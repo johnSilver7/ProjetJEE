@@ -8,8 +8,6 @@ class Adresse {
     String ville
     String codePostal
 
-    static hasMany = [musees:Musee]
-
     static constraints = {
 
         numeroA blank: false,nullable: false

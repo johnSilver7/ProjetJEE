@@ -10,8 +10,6 @@ class Musee {
     Gestionnaire gestionnaire
     Adresse adresse
 
-
-
     static constraints = {
 
         nom blank:false,nullable:false
