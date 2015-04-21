@@ -4,9 +4,13 @@ class Gestionnaire {
 
     String nom
 
-
     static hasMany = [musees:Musee]
+
+    String toString() {
+        "$nom"
+    }
     static constraints = {
-        nom blank: false,nullable: false
+        nom blank: false
+        musees nullable: true
     }
 }

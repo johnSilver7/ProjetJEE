@@ -12,6 +12,11 @@ class Musee {
     Gestionnaire gestionnaire
     Adresse adresse
 
+    String toString() {
+        "$nom"
+    }
+
+
     static constraints = {
 
         nom blank:false,nullable:false

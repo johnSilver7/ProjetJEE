@@ -11,8 +11,4 @@ class MuseeService {
         unMusee
     }
 
-    Musee insertOrUpdateMuseeForAdresse(Musee unMusee, Adresse uneAdresse) {
-        unMusee.setAdresse(uneAdresse)
-        unMusee
-    }
 }
