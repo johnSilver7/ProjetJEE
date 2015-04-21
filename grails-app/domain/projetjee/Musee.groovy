@@ -5,7 +5,6 @@ class Musee {
     String nom
     String horairesOuverture
     String telephone
-    String accesBus
     String accesMetro
     Gestionnaire gestionnaire
     Adresse adresse
@@ -17,5 +16,6 @@ class Musee {
         telephone blank: false,nullable: false
         accesBus blank: false,nullable: false
         accesMetro blank: false,nullable: false
+        adresse blank:false,nullable: false
     }
 }
