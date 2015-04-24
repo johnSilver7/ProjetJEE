@@ -105,7 +105,7 @@
     </table>
 
     <div class="pagination">
-        <g:paginate  max="5" total="${museeInstanceCount ?: 0}"/>
+        <g:paginate  params.max="0" max="5" total="${museeInstanceCount ?: 0}"/>
     </div>
 </div>
 </body>
