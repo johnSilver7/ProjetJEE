@@ -11,7 +11,7 @@ class Musee {
     String  site
     Gestionnaire gestionnaire
     Adresse adresse
-
+    String favori
 
     String toString() {
         "$nom"
