@@ -34,8 +34,9 @@
                 <label for="code">
                     Le code postal est :
                 </label>
-                <g:textField name="code"/>
+                <g:select name="code" from="${projetjee.Adresse.list()}" optionKey="codePostal" optionValue="codePostal"></g:select>
             </div>
+
 
             <div class="fieldcontain">
                 <label for="rue">
