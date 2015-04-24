@@ -31,7 +31,7 @@ class MuseeService {
                 }
             }
             adresse {
-                order('nom')
+                order('rue')
             }
             join 'adresse'
         }

@@ -27,4 +27,8 @@ class Musee {
         site blank: false,nullable: false
         gestionnaire blank:false,nullable: false
     }
+
+    static mapping = {
+        adresse fetch: 'join'
+    }
 }

@@ -3,7 +3,6 @@
 <html>
 <head>
     <meta name="layout" content="main">
-    <meta charset="UTF-8">
     <g:set var="entityName" value="${message(code: 'musee.label', default: 'Musee')}"/>
     <title><g:message code="default.list.label" args="[entityName]"/></title>
 </head>
@@ -72,6 +71,25 @@
 
         </tr>
         </thead>
+        <tbody>
+        <g:each in="${museeInstanceList}" status="i" var="museeInstance">
+            <tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
+                <td><g:link action="show"
+                            id="${museeInstance.id}">${fieldValue(bean: museeInstance, field: "nom")}</g:link></td>
+
+                <td>${fieldValue(bean: museeInstance, field: "horairesOuverture")}</td>
+
+                <td>${fieldValue(bean: museeInstance, field: "telephone")}</td>
+
+                <td>${fieldValue(bean: museeInstance, field: "accesMetro")}</td>
+
+                <td>${fieldValue(bean: museeInstance, field: "adresse")}</td>
+
+                <td>${fieldValue(bean: museeInstance, field: "site")}</td>
+
+            </tr>
+        </g:each>
+        </tbody>
     </table>
 
     <div class="pagination">
