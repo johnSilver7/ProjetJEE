@@ -1,7 +1,5 @@
 package projetjee
 
-
-
 import grails.transaction.Transactional
 
 @Transactional
@@ -17,8 +15,6 @@ class JeuTestService {
     Adresse jacobinsPost;
 
     MuseeService museeService;
-
-
 
     def createJeuTestforMusee() {
         if (Musee.count()==0) {

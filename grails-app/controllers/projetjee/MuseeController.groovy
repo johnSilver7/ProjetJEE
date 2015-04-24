@@ -8,7 +8,7 @@ import grails.transaction.Transactional
 class MuseeController {
 
     MuseeService museeService
-    UtilisateurService utilisateurService
+
 
     static scaffold = true
 
