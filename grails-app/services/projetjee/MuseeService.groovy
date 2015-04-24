@@ -11,4 +11,31 @@ class MuseeService {
         unMusee
     }
 
+
+    List<Musee> searchMusees(String nomMusee, String code, String rue) {
+        def criteria = Musee.createCriteria()
+        List<Musee> res = criteria.list {
+            if (nomMusee) {
+                    ilike 'nom', "%${nomMusee}%"
+            }
+            if (code) {
+                adresse {
+                    ilike 'codePostal', "%${code}%"
+                }
+
+            }
+            if (rue) {
+                adresse {
+
+                    ilike 'rue', "%${rue}%"
+                }
+            }
+            adresse {
+                order('nom')
+            }
+            join 'adresse'
+        }
+        res
+    }
+
 }
