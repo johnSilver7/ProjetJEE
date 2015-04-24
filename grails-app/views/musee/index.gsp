@@ -73,7 +73,8 @@
         </tr>
         </thead>
         <tbody>
-        <g:each in="${museeInstanceList}" status="i" var="museeInstance">
+
+       <g:each in="${museeInstanceList}" status="i" var="museeInstance">
             <tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
                 <td><g:link action="show"
                             id="${museeInstance.id}">${fieldValue(bean: museeInstance, field: "nom")}</g:link></td>
@@ -104,7 +105,7 @@
     </table>
 
     <div class="pagination">
-        <g:paginate total="${museeInstanceCount ?: 0}"/>
+        <g:paginate  max="5" total="${museeInstanceCount ?: 0}"/>
     </div>
 </div>
 </body>

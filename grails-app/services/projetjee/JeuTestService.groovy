@@ -8,11 +8,17 @@ class JeuTestService {
     Musee archivesToulouse;
     Musee cmav;
     Musee jacobins;
+    Musee almu;
+    Musee lymu;
+    Musee parmu;
     //DemandeVisite uneDemandeVisite;
     Gestionnaire gestionnaireMusee;
     Adresse archivesPost;
     Adresse cmavPost;
     Adresse jacobinsPost;
+    Adresse adreFrist;
+    Adresse adrely;
+    Adresse adrePa;
 
     MuseeService museeService;
 
@@ -83,6 +89,70 @@ class JeuTestService {
             ).save(flush: true)
 
             jacobins = museeService.insertOrUpdateMuseeForGestionnaire(jacobins,gestionnaireMusee)
+
+
+            adreFrist = new Adresse(
+                    numeroA: "18",
+                    rue: "RUE PARC",
+                    ville: "Albi",
+                    codePostal: "81000"
+            ).save(flush: true)
+
+            almu = new Musee(
+                    nom: "ENSEMBLE CONVENTUEL",
+                    horairesOuverture: "Ouvert tous les jours de 9h à 19h.",
+                    telephone: "05 61 22 21 98",
+                    accesMetro: "Esquirol (A)",
+                    site: "www.jacobins.mairie-toulouse.fr",
+                    gestionnaire: gestionnaireMusee,
+                    adresse: adreFrist,
+                    favori: "non"
+
+            ).save(flush: true)
+
+            almu = museeService.insertOrUpdateMuseeForGestionnaire(almu,gestionnaireMusee)
+
+            adrely = new Adresse(
+                    numeroA: "18",
+                    rue: "RUE DE ROSSAIRE",
+                    ville: "Lyon",
+                    codePostal: "81000"
+            ).save(flush: true)
+
+            lymu = new Musee(
+                    nom: "ENSEMBLE CONVENTUEL DE LYON",
+                    horairesOuverture: "Ouvert tous les jours de 9h à 19h.",
+                    telephone: "05 61 22 21 98",
+                    accesMetro: "Esquirol (A)",
+                    site: "www.jacobins.mairie-toulouse.fr",
+                    gestionnaire: gestionnaireMusee,
+                    adresse: adrely,
+                    favori: "non"
+
+            ).save(flush: true)
+
+            lymu = museeService.insertOrUpdateMuseeForGestionnaire(lymu,gestionnaireMusee)
+
+            adrePa = new Adresse(
+                    numeroA: "1100",
+                    rue: "RUE DE ROSSAIRE",
+                    ville: "PARIS",
+                    codePostal: "81000"
+            ).save(flush: true)
+
+            parmu = new Musee(
+                    nom: "ENSEMBLE CONVENTUEL DE PARIS",
+                    horairesOuverture: "Ouvert tous les jours de 9h à 19h.",
+                    telephone: "05 61 22 21 98",
+                    accesMetro: "Esquirol (A)",
+                    site: "www.jacobins.mairie-toulouse.fr",
+                    gestionnaire: gestionnaireMusee,
+                    adresse: adrePa,
+                    favori: "non"
+
+            ).save(flush: true)
+
+            parmu = museeService.insertOrUpdateMuseeForGestionnaire(parmu,gestionnaireMusee)
         }
     }
 }
