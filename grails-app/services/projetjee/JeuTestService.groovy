@@ -143,7 +143,7 @@ class JeuTestService {
             parmu = new Musee(
                     nom: "ENSEMBLE CONVENTUEL DE PARIS",
                     horairesOuverture: "Ouvert tous les jours de 9h à 19h.",
-                    telephone: "05 61 22 21 98",
+                    telephone: "05 61 22 21 20",
                     accesMetro: "Esquirol (A)",
                     site: "www.jacobins.mairie-toulouse.fr",
                     gestionnaire: gestionnaireMusee,
