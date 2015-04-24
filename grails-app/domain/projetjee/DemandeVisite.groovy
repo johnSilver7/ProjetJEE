@@ -13,6 +13,5 @@ class DemandeVisite {
         dateDebutPeriode blank: false,nullable: false
         dateFinPeriode blank: false,nullable: false
         status blank: false,nullable: false
-        nbPersonnes blank:false,nullable:false
     }
 }

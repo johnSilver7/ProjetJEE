@@ -12,6 +12,10 @@ class MuseeControllerSpec extends Specification {
         assert params != null
         // TODO: Populate valid properties like...
         //params["name"] = 'someValidName'
+<<<<<<< HEAD
+=======
+
+>>>>>>> remotes/origin/saindy
     }
 
     void "Test the index action returns the correct model"() {

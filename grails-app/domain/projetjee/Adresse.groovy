@@ -8,10 +8,6 @@ class Adresse {
     String ville
     String codePostal
 
-    String toString() {
-        "$numeroA $rue $ville $codePostal"
-    }
-
     static constraints = {
 
         numeroA blank: false,nullable: false
