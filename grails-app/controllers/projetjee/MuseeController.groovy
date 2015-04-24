@@ -13,7 +13,15 @@ class MuseeController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
-   def doSearchMusees() {
+    def index = {
+        ['val': 0] //or [val: params.val] if you want to get it from parameters.
+    }
+
+    def addFavorites() {
+        log.info "Entering Action ${params.nom}"
+    }
+
+    def doSearchMusees() {
         def museeList = museeService.searchMusees(params.nom, params.code, params.rue)
         render(view: 'index', model: [museeInstanceList: museeList, museeInstanceCount: museeList.size()])
     }

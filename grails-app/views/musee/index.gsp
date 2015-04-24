@@ -85,7 +85,18 @@
 
                 <td>${fieldValue(bean: museeInstance, field: "adresse")}</td>
 
-                <td>${fieldValue(bean: museeInstance, field: "site")}</td>
+                <td>${fieldValue(bean: museeInstance, field: "site")}
+
+
+                    <g:if test="${val == 1}">
+                        <button type="button" name="favButton"   onclick="${remoteFunction(action: 'addFavorites', controller: 'MuseeController',
+                                params: [nom : 'this.value'])}") >bookmark me!</button>
+                    </g:if>
+                    <g:else>
+                        <button type="button" name="favButton"
+                                onclick="${remoteFunction(action: 'addFavorites', controller: 'MuseeController',
+                                        params: [nom : 'this.value'])}") >bookmark me!</button>
+                    </g:else>
 
             </tr>
         </g:each>
