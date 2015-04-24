@@ -37,7 +37,8 @@ class JeuTestService {
                     accesMetro: "Roseraie (A)",
                     site: "www.urban-hist.toulouse.fr",
                     gestionnaire: gestionnaireMusee,
-                    adresse: archivesPost
+                    adresse: archivesPost,
+                    favori: "non"
             ).save(flush: true)
 
             archivesToulouse = museeService.insertOrUpdateMuseeForGestionnaire(archivesToulouse,gestionnaireMusee)
@@ -56,7 +57,8 @@ class JeuTestService {
                     accesMetro: "Capitole (A)",
                     site: "www.cmaville.org",
                     gestionnaire: gestionnaireMusee,
-                    adresse: cmavPost
+                    adresse: cmavPost,
+                    favori: "oui"
             ).save(flush: true)
 
             cmav = museeService.insertOrUpdateMuseeForGestionnaire(cmav,gestionnaireMusee)
@@ -75,7 +77,8 @@ class JeuTestService {
                     accesMetro: "Esquirol (A)",
                     site: "www.jacobins.mairie-toulouse.fr",
                     gestionnaire: gestionnaireMusee,
-                    adresse: jacobinsPost
+                    adresse: jacobinsPost,
+                    favori: "non"
 
             ).save(flush: true)
 
