@@ -80,6 +80,9 @@ class JeuTestService {
             ).save(flush: true)
 
           jacobins = museeService.insertOrUpdateMuseeForGestionnaire(jacobins,gestionnaireMusee)
+
+
+
         }
     }
 }
