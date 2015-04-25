@@ -109,26 +109,28 @@
             <g:paginate total="${museeInstanceCount ?: 0}"/>
         </div>
     </div>
+    <g:if test="${"${ showFav }" == "ok"}">
 
-    <div>
-        <h1>MES MUSEES FAVORIS</h1>
-        <g:each in="${museeInstanceList}" status="i" var="museeInstance">
-            <g:if test="${"${museeInstance.favori}" == "oui"}">
-                <table>
-                    <tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-                        <td><g:link action="show"
-                                    id="${museeInstance.id}">${fieldValue(bean: museeInstance, field: "nom")}</g:link>
-                        <g:form>
-                            <g:hiddenField name="nom" value="${museeInstance.nom}"/>
-                            <g:actionSubmit action="removeFavorites" value="Supprimer des favoris"/>
-                            <g:actionSubmit action="redirectToDemandeVisite" value="Demande visite"/>
-                        </g:form>
-                        </td>
-                    </tr>
-                </table>
+        <div>
+            <h1>MES MUSEES FAVORIS</h1>
+            <g:each in="${museeInstanceList}" status="i" var="museeInstance">
+                <g:if test="${"${museeInstance.favori}" == "oui"}">
+                    <table>
+                        <tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
+                            <td><g:link action="show"
+                                        id="${museeInstance.id}">${fieldValue(bean: museeInstance, field: "nom")}</g:link>
+                            <g:form>
+                                <g:hiddenField name="nom" value="${museeInstance.nom}"/>
+                                <g:actionSubmit action="removeFavorites" value="Supprimer des favoris"/>
+                                <g:actionSubmit action="redirectToDemandeVisite" value="Demande visite"/>
+                            </g:form>
+                            </td>
+                        </tr>
+                    </table>
 
-            </g:if>
-        </g:each>
-    </div>
+                </g:if>
+            </g:each>
+        </div>
+    </g:if>
 </body>
 </html>

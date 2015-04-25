@@ -34,13 +34,15 @@ class MuseeController {
     }
 
     def doSearchMusees() {
+        def showFav = "non"
         def museeList = museeService.searchMusees(params.nom, params.code, params.rue)
-        render(view: 'index', model: [museeInstanceList: museeList, museeInstanceCount: museeList.size()])
+        render(view: 'index', model: [museeInstanceList: museeList, museeInstanceCount: museeList.size(), showFav: showFav])
     }
 
     def index(Integer max) {
+        def showFav = "ok"
         params.max = Math.min(max ?: 10, 100)
-        respond Musee.list(params), model: [museeInstanceCount: Musee.count()]
+        respond Musee.list(params), model: [museeInstanceCount: Musee.count(), showFav: showFav]
     }
 
     def show(Musee museeInstance) {
