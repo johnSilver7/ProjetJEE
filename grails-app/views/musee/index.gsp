@@ -68,6 +68,7 @@
 
             <th><g:message code="musee.adresse.label" default="Adresse"/></th>
 
+
             <g:sortableColumn property="site" title="${message(code: 'musee.site.label', default: 'Site')}"/>
 
         </tr>
@@ -105,7 +106,7 @@
     </table>
 
     <div class="pagination">
-        <g:paginate  params.max="0" max="5" total="${museeInstanceCount ?: 0}"/>
+        <g:paginate   max="5" total="${museeInstanceCount ?: 0}"/>
     </div>
 </div>
 </body>
