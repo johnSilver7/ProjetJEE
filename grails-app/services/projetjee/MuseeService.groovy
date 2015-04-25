@@ -50,16 +50,30 @@ class MuseeService {
         res
     }
 
+    List<Gestionnaire> searchGestionnaire(String nomG) {
+        def criteria = Gestionnaire.createCriteria()
+        List<Gestionnaire> res = criteria.list {
+            if (nomG) {
+                ilike 'nom', "${nomG}"
+            }
+            order('nom')
+        }
+        res
+    }
+
 
     List<Musee> ajoutFavori(String nom) {
         // Musee leMusee = Musee.findByNom(nom)
 
         List<Musee> unMusee = searchUnMusee(nom)
+        List<Gestionnaire> unGestionnaire = searchGestionnaire("gestionnaire favoris")
         unMusee.first().setFavori("oui")
-        unMusee.first().save(flush: true)
-        unMusee.first().gestionnaire.removeFromMusees(unMusee.first())
+        unMusee.first().save(flush: true, failOnError: true)
+        unGestionnaire.first().addToMusees(unMusee.first())
+        unGestionnaire.first().save(flush: true, failOnError: true)
+        //unMusee.first().gestionnaire.removeFromMusees(unMusee.first())
 
-        insertOrUpdateMuseeForGestionnaire(unMusee.first(), jeu.gestionnaireMusee)
+        //insertOrUpdateMuseeForGestionnaire(unMusee.first(), jeu.gestionnaireMusee)
         //jeu.supprimerDuGestionnnaire(new Musee(nom: "archives"))
         //insertOrUpdateMuseeForGestionnaire(unMusee.first(), jeu.gestionnaireMusee)
 

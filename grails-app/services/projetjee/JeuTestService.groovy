@@ -26,7 +26,7 @@ class JeuTestService {
         if (Musee.count()==0) {
 
             gestionnaireMusee = new Gestionnaire(
-                    nom: "Gestionnaire des musees de Toulouse"
+                    nom: "Gestionnaire favoris"
             ).save(flush: true)
 
             archivesPost = new Adresse(
@@ -34,7 +34,7 @@ class JeuTestService {
                     rue: "RUE DES ARCHIVES",
                     ville: "Toulouse",
                     codePostal: "31500"
-            ).save(flush: true)
+            ).save(flush: true,failOnError: true)
 
             archivesToulouse = new Musee(
                     nom: "ARCHIVES MUNICIPALES TOULOUSE",
@@ -42,7 +42,7 @@ class JeuTestService {
                     telephone: "05 61 61 63 33",
                     accesMetro: "Roseraie (A)",
                     site: "www.urban-hist.toulouse.fr",
-                    gestionnaire: gestionnaireMusee,
+                   // gestionnaire: gestionnaireMusee,
                     adresse: archivesPost,
                     favori: "non"
             ).save(flush: true)
@@ -62,7 +62,7 @@ class JeuTestService {
                     telephone: "05 61 23 30 49",
                     accesMetro: "Capitole (A)",
                     site: "www.cmaville.org",
-                    gestionnaire: gestionnaireMusee,
+                    //gestionnaire: gestionnaireMusee,
                     adresse: cmavPost,
                     favori: "oui"
             ).save(flush: true)
@@ -82,13 +82,13 @@ class JeuTestService {
                     telephone: "05 61 22 21 92",
                     accesMetro: "Esquirol (A)",
                     site: "www.jacobins.mairie-toulouse.fr",
-                    gestionnaire: gestionnaireMusee,
+                    //gestionnaire: gestionnaireMusee,
                     adresse: jacobinsPost,
                     favori: "non"
 
             ).save(flush: true)
 
-            jacobins = museeService.insertOrUpdateMuseeForGestionnaire(jacobins,gestionnaireMusee)
+//            jacobins = museeService.insertOrUpdateMuseeForGestionnaire(jacobins,gestionnaireMusee)
 
 
             adreFrist = new Adresse(
@@ -104,7 +104,7 @@ class JeuTestService {
                     telephone: "05 61 22 21 98",
                     accesMetro: "Esquirol (A)",
                     site: "www.jacobins.mairie-toulouse.fr",
-                    gestionnaire: gestionnaireMusee,
+                    //gestionnaire: gestionnaireMusee,
                     adresse: adreFrist,
                     favori: "non"
 
@@ -125,13 +125,13 @@ class JeuTestService {
                     telephone: "05 61 22 21 98",
                     accesMetro: "Esquirol (A)",
                     site: "www.jacobins.mairie-toulouse.fr",
-                    gestionnaire: gestionnaireMusee,
+                    //gestionnaire: gestionnaireMusee,
                     adresse: adrely,
                     favori: "non"
 
             ).save(flush: true)
 
-            lymu = museeService.insertOrUpdateMuseeForGestionnaire(lymu,gestionnaireMusee)
+            //lymu = museeService.insertOrUpdateMuseeForGestionnaire(lymu,gestionnaireMusee)
 
             adrePa = new Adresse(
                     numeroA: "1100",
@@ -146,7 +146,7 @@ class JeuTestService {
                     telephone: "05 61 22 21 20",
                     accesMetro: "Esquirol (A)",
                     site: "www.jacobins.mairie-toulouse.fr",
-                    gestionnaire: gestionnaireMusee,
+                    //gestionnaire: gestionnaireMusee,
                     adresse: adrePa,
                     favori: "non"
 
