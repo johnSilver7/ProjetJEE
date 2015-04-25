@@ -21,7 +21,7 @@ class MuseeController {
         println("sdasdasdsad")
         println("$params.nom")
         def listFavoris = museeService.ajoutFavori(params.nom)
-        render(view: 'index', model: [museeInstanceList: listFavoris, museeInstanceCount: listFavoris.size()])
+        render(view: 'index', model: [museeInstanceList: Musee.list(), museeInstanceCount: Musee.count()])
     }
 
     def doSearchMusees() {

@@ -42,7 +42,7 @@ class JeuTestService {
                     telephone: "05 61 61 63 33",
                     accesMetro: "Roseraie (A)",
                     site: "www.urban-hist.toulouse.fr",
-                   // gestionnaire: gestionnaireMusee,
+                    //gestionnaire: gestionnaireMusee,
                     adresse: archivesPost,
                     favori: "non"
             ).save(flush: true)
@@ -64,7 +64,7 @@ class JeuTestService {
                     site: "www.cmaville.org",
                     //gestionnaire: gestionnaireMusee,
                     adresse: cmavPost,
-                    favori: "oui"
+                    favori: "non"
             ).save(flush: true)
 
             //cmav = museeService.insertOrUpdateMuseeForGestionnaire(cmav,gestionnaireMusee)
