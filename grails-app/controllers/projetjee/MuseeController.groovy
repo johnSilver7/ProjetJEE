@@ -8,7 +8,6 @@ import grails.transaction.Transactional
 class MuseeController {
 
     MuseeService museeService
-    UtilisateurService utilisateurService
 
     static scaffold = true
 
@@ -19,9 +18,10 @@ class MuseeController {
     }
 
     def addFavorites() {
-        def listFavoris = utilisateurService.ajoutFavoris(params.musee)
-        render(view: 'index', model: [museeInstanceList: museeList, museeInstanceCount: museeList.size()])
-
+        println("sdasdasdsad")
+        println("$params.nom")
+        def listFavoris = museeService.ajoutFavori(params.nom)
+        render(view: 'index', model: [museeInstanceList: listFavoris, museeInstanceCount: listFavoris.size()])
     }
 
     def doSearchMusees() {
