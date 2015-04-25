@@ -23,6 +23,10 @@ class MuseeController {
         render(view: 'index', model: [museeInstanceList: Musee.list(), museeInstanceCount: Musee.count(), showFav : showFav])
     }
 
+    def redirectToDemandeVisite =  {
+        redirect(controller:"demandeVisiteMusee",action:"index")
+    }
+
     def removeFavorites() {
         def showFav = "ok"
         def listremove = museeService.deleteFavori(params.nom)

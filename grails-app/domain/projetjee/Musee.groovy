@@ -8,7 +8,7 @@ class Musee {
     String horairesOuverture
     String telephone
     String accesMetro
-    String  site
+    String site
     Gestionnaire gestionnaire
     Adresse adresse
     String favori
@@ -21,12 +21,12 @@ class Musee {
 
     static constraints = {
 
-        nom blank:false,nullable:false
-        horairesOuverture blank: false,nullable: false
-        telephone blank: false,nullable: false
-        accesMetro blank: false,nullable: false
-        adresse blank:false,nullable: false
-        site blank: false,nullable: false
+        nom blank: false, nullable: false
+        horairesOuverture blank: false, nullable: false
+        telephone blank: false, nullable: false
+        accesMetro blank: false, nullable: false
+        adresse blank: false, nullable: false
+        site blank: false, nullable: false
         gestionnaire nullable: true
         favori blank: false, nullable: false
     }
@@ -34,4 +34,5 @@ class Musee {
     static mapping = {
         adresse fetch: 'join'
     }
+
 }

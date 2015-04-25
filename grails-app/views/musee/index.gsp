@@ -119,8 +119,9 @@
                         <td><g:link action="show"
                                     id="${museeInstance.id}">${fieldValue(bean: museeInstance, field: "nom")}</g:link>
                         <g:form>
-                                <g:hiddenField name="nom" value="${museeInstance.nom}"/>
-                                <g:actionSubmit action="removeFavorites" value="supprimer des favoris"/>
+                            <g:hiddenField name="nom" value="${museeInstance.nom}"/>
+                            <g:actionSubmit action="removeFavorites" value="Supprimer des favoris"/>
+                            <g:actionSubmit action="redirectToDemandeVisite" value="Demande visite"/>
                         </g:form>
                         </td>
                     </tr>
