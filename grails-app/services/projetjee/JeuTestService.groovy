@@ -44,10 +44,10 @@ class JeuTestService {
                     site: "www.urban-hist.toulouse.fr",
                     //gestionnaire: gestionnaireMusee,
                     adresse: archivesPost,
-                    favori: "non"
+                    favori: "oui"
             ).save(flush: true)
 
-            //archivesToulouse = museeService.insertOrUpdateMuseeForGestionnaire(archivesToulouse,gestionnaireMusee)
+            archivesToulouse = museeService.insertOrUpdateMuseeForGestionnaire(archivesToulouse,gestionnaireMusee)
 
             cmavPost = new Adresse(
                     numeroA: "5",
@@ -84,11 +84,11 @@ class JeuTestService {
                     site: "www.jacobins.mairie-toulouse.fr",
                     //gestionnaire: gestionnaireMusee,
                     adresse: jacobinsPost,
-                    favori: "non"
+                    favori: "oui"
 
             ).save(flush: true)
 
-//            jacobins = museeService.insertOrUpdateMuseeForGestionnaire(jacobins,gestionnaireMusee)
+          jacobins = museeService.insertOrUpdateMuseeForGestionnaire(jacobins,gestionnaireMusee)
 
 
             adreFrist = new Adresse(

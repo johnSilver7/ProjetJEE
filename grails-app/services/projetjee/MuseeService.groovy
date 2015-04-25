@@ -71,14 +71,18 @@ class MuseeService {
         unMusee.first().save(flush: true, failOnError: true)
         unGestionnaire.first().addToMusees(unMusee.first())
         unGestionnaire.first().save(flush: true, failOnError: true)
-        //unMusee.first().gestionnaire.removeFromMusees(unMusee.first())
+        unMusee
+    }
 
-        //insertOrUpdateMuseeForGestionnaire(unMusee.first(), jeu.gestionnaireMusee)
-        //jeu.supprimerDuGestionnnaire(new Musee(nom: "archives"))
-        //insertOrUpdateMuseeForGestionnaire(unMusee.first(), jeu.gestionnaireMusee)
+    List<Musee> deleteFavori(String nom) {
+        // Musee leMusee = Musee.findByNom(nom)
 
-        //jeu.gestionnaireMusee.removeFromMusees(unMusee.first())
-        //unMusee.get(0).gestionnaire.save(flush: true)
+        List<Musee> unMusee = searchUnMusee(nom)
+        List<Gestionnaire> unGestionnaire = searchGestionnaire("gestionnaire favoris")
+        unMusee.first().setFavori("non")
+        unMusee.first().save(flush: true, failOnError: true)
+        unGestionnaire.first().removeFromMusees(unMusee.first())
+        unGestionnaire.first().save(flush: true, failOnError: true)
         unMusee
     }
 

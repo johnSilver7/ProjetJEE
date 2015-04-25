@@ -18,14 +18,18 @@ class MuseeController {
     }
 
     def addFavorites() {
-        println("sdasdasdsad")
-        println("$params.nom")
+        def showFav = "ok"
         def listFavoris = museeService.ajoutFavori(params.nom)
-        render(view: 'index', model: [museeInstanceList: Musee.list(), museeInstanceCount: Musee.count()])
+        render(view: 'index', model: [museeInstanceList: Musee.list(), museeInstanceCount: Musee.count(), showFav : showFav])
+    }
+
+    def removeFavorites() {
+        def showFav = "ok"
+        def listremove = museeService.deleteFavori(params.nom)
+        render(view: 'index', model: [museeInstanceList: Musee.list(), museeInstanceCount: Musee.count(), showFav : showFav])
     }
 
     def doSearchMusees() {
-        println("boo " + params.code)
         def museeList = museeService.searchMusees(params.nom, params.code, params.rue)
         render(view: 'index', model: [museeInstanceList: museeList, museeInstanceCount: museeList.size()])
     }
