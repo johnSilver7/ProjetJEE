@@ -25,6 +25,7 @@ class MuseeController {
     }
 
     def doSearchMusees() {
+        println("boo " + params.code)
         def museeList = museeService.searchMusees(params.nom, params.code, params.rue)
         render(view: 'index', model: [museeInstanceList: museeList, museeInstanceCount: museeList.size()])
     }

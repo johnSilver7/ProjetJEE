@@ -34,7 +34,7 @@
                 <label for="code">
                     Le code postal est :
                 </label>
-                <g:select name="code" from="${projetjee.Adresse.list()}" optionKey="codePostal" optionValue="codePostal"></g:select>
+                <g:select name="code" from="${projetjee.Adresse.list()}" noSelection="${['null': 'Select one...']}" optionKey="codePostal" optionValue="codePostal"></g:select>
             </div>
 
 
