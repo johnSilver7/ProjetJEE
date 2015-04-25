@@ -8,10 +8,21 @@ import spock.lang.*
 @Mock(Musee)
 class MuseeControllerSpec extends Specification {
 
+
+
+
     def populateValidParams(params) {
         assert params != null
         // TODO: Populate valid properties like...
         //params["name"] = 'someValidName'
+        params["nom"] = 'MuseeAlbi'
+        params["horairesOuverture"] = '09h'
+        params["telephone"] = '06 74 85 96 01'
+        params["accesMetro"] = 'Capitole(A)'
+        params["site"] = 'www.musse.albi.fr'
+        params["gestionnaire.id"] = 1
+        params["adresse.id"] = 1
+        params["favori"] = 'favori'
 
     }
 

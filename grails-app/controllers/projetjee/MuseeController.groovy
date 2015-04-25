@@ -9,7 +9,6 @@ class MuseeController {
 
     MuseeService museeService
 
-
     static scaffold = true
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
@@ -19,18 +18,20 @@ class MuseeController {
     }
 
     def addFavorites() {
-        def listFavoris = utilisateurService.ajoutFavoris(params.musee)
-        render(view: 'index', model: [museeInstanceList: museeList, museeInstanceCount: museeList.size()])
-
+        println("sdasdasdsad")
+        println("$params.nom")
+        def listFavoris = museeService.ajoutFavori(params.nom)
+        render(view: 'index', model: [museeInstanceList: listFavoris, museeInstanceCount: listFavoris.size()])
     }
 
     def doSearchMusees() {
+        println("boo " + params.code)
         def museeList = museeService.searchMusees(params.nom, params.code, params.rue)
         render(view: 'index', model: [museeInstanceList: museeList, museeInstanceCount: museeList.size()])
     }
 
     def index(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
+        params.max = Math.min(max ?: 5, 100)
         respond Musee.list(params), model: [museeInstanceCount: Musee.count()]
     }
 

@@ -13,6 +13,7 @@ class Musee {
     Adresse adresse
     String favori
 
+
     String toString() {
         "$nom"
     }
@@ -27,6 +28,7 @@ class Musee {
         adresse blank:false,nullable: false
         site blank: false,nullable: false
         gestionnaire blank:false,nullable: false
+        favori blank: false, nullable: false
     }
 
     static mapping = {

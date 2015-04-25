@@ -2,6 +2,7 @@ package projetjee
 
 import grails.test.mixin.TestFor
 import spock.lang.Specification
+import spock.lang.Unroll
 
 /**
  * See the API for {@link grails.test.mixin.domain.DomainClassUnitTestMixin} for usage instructions
@@ -9,12 +10,29 @@ import spock.lang.Specification
 @TestFor(Gestionnaire)
 class GestionnaireSpec extends Specification {
 
-    def setup() {
+    @Unroll
+    void "test la validite d'une adresse valide"() {
+
+        given: "un gestionnaire initialise avec des paramètres non vide"
+        Gestionnaire gestion = new Gestionnaire(nom: "un nom")
+
+        expect: "le gestionnaire est valide"
+        gestion.validate() == true
+
     }
 
-    def cleanup() {
-    }
+    @Unroll
+    void "test l'invalidite d'un gestionnaire non valide"() {
 
-    void "test something"() {
+        given: "un gestionnaire initialise avec les paramètres vides"
+        Gestionnaire gestion = new Gestionnaire()
+
+        expect: "l'adresse est invalide"
+        gestion.validate() == false
+
+
+
+
+
     }
 }

@@ -5,6 +5,22 @@
     <meta name="layout" content="main">
     <g:set var="entityName" value="${message(code: 'musee.label', default: 'Musee')}"/>
     <title><g:message code="default.list.label" args="[entityName]"/></title>
+    <g:javascript library="scriptaculous" />
+    <g:javascript>
+
+        window.
+        $(document).ready(function () {
+
+
+
+
+            $("#sub").click(function() {
+
+            $("#idtab").show();
+        });
+
+        });
+    </g:javascript>
 </head>
 
 <body>
@@ -46,11 +62,13 @@
             </div>
 
             <div style="float: right">
-                <g:actionSubmit action="doSearchMusees" value="Rechercher"/>
+                <g:actionSubmit id="sub" action="doSearchMusees" value="Rechercher"/>
             </div>
         </fieldset>
 
     </g:form>
+
+    <div id="idtab">
     <table>
         <thead>
         <tr>
@@ -68,14 +86,12 @@
 
             <th><g:message code="musee.adresse.label" default="Adresse"/></th>
 
-
             <g:sortableColumn property="site" title="${message(code: 'musee.site.label', default: 'Site')}"/>
 
         </tr>
         </thead>
         <tbody>
-
-       <g:each in="${museeInstanceList}" status="i" var="museeInstance">
+        <g:each in="${museeInstanceList}" status="i" var="museeInstance">
             <tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
                 <td><g:link action="show"
                             id="${museeInstance.id}">${fieldValue(bean: museeInstance, field: "nom")}</g:link></td>
@@ -106,7 +122,8 @@
     </table>
 
     <div class="pagination">
-        <g:paginate   max="5" total="${museeInstanceCount ?: 0}"/>
+        <g:paginate max="0" total="${museeInstanceCount ?: 0}"/>
+    </div>
     </div>
 </div>
 </body>
