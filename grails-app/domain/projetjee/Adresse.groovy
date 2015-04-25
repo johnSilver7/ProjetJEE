@@ -19,4 +19,12 @@ class Adresse {
         ville blank: false,nullable: false
         codePostal blank: false,nullable: false
     }
+
+    public static List listUnique() {
+        Adresse.withCriteria {
+            projections {
+                distinct "codePostal"
+            }
+        }.sort()
+    }
 }
