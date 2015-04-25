@@ -3,7 +3,6 @@ package projetjee
 class Gestionnaire {
 
     String nom
-
     static hasMany = [musees:Musee]
 
     String toString() {
