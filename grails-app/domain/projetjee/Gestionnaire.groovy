@@ -8,8 +8,13 @@ class Gestionnaire {
     String toString() {
         "$nom"
     }
+
     static constraints = {
         nom blank: false
         musees nullable: true
+    }
+
+    static mapping = {
+        musees sort:'nom'
     }
 }
