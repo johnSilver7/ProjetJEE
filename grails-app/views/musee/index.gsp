@@ -88,15 +88,15 @@
 
                 <td>${fieldValue(bean: museeInstance, field: "site")}
 
-
-                    <g:if test="${fieldValue(bean: museeInstance, field: "favori") == "oui"}">
-                        <button type="button" name="favButton" disabled = true >bookmark me!</button>
-                    </g:if>
-                    <g:else>
-                        <button type="button" name="favButton"
-                                onclick="${remoteFunction(action: 'addFavorites', controller: 'MuseeController',
-                                        params: [musee : museeInstance])}") >bookmark me!</button>
-                    </g:else>
+                    <g:form>
+                        <g:if test="${"${museeInstance.favori}" == "oui"}">
+                            <g:actionSubmit value="bookmark me!" disabled="true"/>
+                        </g:if>
+                        <g:else>
+                            <g:hiddenField name="nom" value="${museeInstance.nom}"/>
+                            <g:actionSubmit action="addFavorites" value="bookmark me!"/>
+                        </g:else>
+                    </g:form>
 
             </tr>
         </g:each>
