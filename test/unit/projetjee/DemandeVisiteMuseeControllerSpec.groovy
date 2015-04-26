@@ -12,6 +12,9 @@ class DemandeVisiteMuseeControllerSpec extends Specification {
         assert params != null
         // TODO: Populate valid properties like...
         //params["name"] = 'someValidName'
+        params["dateDemande"] = '15/08/2015'
+        params["musee.id"] = 1
+        params["demandeVisite.id"] = 1
     }
 
     void "Test the index action returns the correct model"() {

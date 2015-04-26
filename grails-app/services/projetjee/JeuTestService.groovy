@@ -4,7 +4,6 @@ import grails.transaction.Transactional
 
 @Transactional
 class JeuTestService {
-    Musee arc
     Musee archivesToulouse;
     Musee cmav;
     Musee jacobins;
@@ -42,7 +41,7 @@ class JeuTestService {
                     telephone: "05 61 61 63 33",
                     accesMetro: "Roseraie (A)",
                     site: "www.urban-hist.toulouse.fr",
-                    //gestionnaire: gestionnaireMusee,
+                    gestionnaire: gestionnaireMusee,
                     adresse: archivesPost,
                     favori: "oui"
             ).save(flush: true)
@@ -62,12 +61,12 @@ class JeuTestService {
                     telephone: "05 61 23 30 49",
                     accesMetro: "Capitole (A)",
                     site: "www.cmaville.org",
-                    //gestionnaire: gestionnaireMusee,
+                    gestionnaire: gestionnaireMusee,
                     adresse: cmavPost,
                     favori: "non"
             ).save(flush: true)
 
-            //cmav = museeService.insertOrUpdateMuseeForGestionnaire(cmav,gestionnaireMusee)
+            cmav = museeService.insertOrUpdateMuseeForGestionnaire(cmav,gestionnaireMusee)
 
             jacobinsPost = new Adresse(
                     numeroA: "10",
@@ -82,7 +81,7 @@ class JeuTestService {
                     telephone: "05 61 22 21 92",
                     accesMetro: "Esquirol (A)",
                     site: "www.jacobins.mairie-toulouse.fr",
-                    //gestionnaire: gestionnaireMusee,
+                    gestionnaire: gestionnaireMusee,
                     adresse: jacobinsPost,
                     favori: "oui"
 
@@ -104,13 +103,13 @@ class JeuTestService {
                     telephone: "05 61 22 21 98",
                     accesMetro: "Esquirol (A)",
                     site: "www.jacobins.mairie-toulouse.fr",
-                    //gestionnaire: gestionnaireMusee,
+                    gestionnaire: gestionnaireMusee,
                     adresse: adreFrist,
                     favori: "non"
 
             ).save(flush: true)
 
-            //almu = museeService.insertOrUpdateMuseeForGestionnaire(almu,gestionnaireMusee)
+            almu = museeService.insertOrUpdateMuseeForGestionnaire(almu,gestionnaireMusee)
 
             adrely = new Adresse(
                     numeroA: "18",
@@ -125,13 +124,13 @@ class JeuTestService {
                     telephone: "05 61 22 21 98",
                     accesMetro: "Esquirol (A)",
                     site: "www.jacobins.mairie-toulouse.fr",
-                    //gestionnaire: gestionnaireMusee,
+                    gestionnaire: gestionnaireMusee,
                     adresse: adrely,
                     favori: "non"
 
             ).save(flush: true)
 
-            //lymu = museeService.insertOrUpdateMuseeForGestionnaire(lymu,gestionnaireMusee)
+            lymu = museeService.insertOrUpdateMuseeForGestionnaire(lymu,gestionnaireMusee)
 
             adrePa = new Adresse(
                     numeroA: "1100",
@@ -146,18 +145,18 @@ class JeuTestService {
                     telephone: "05 61 22 21 20",
                     accesMetro: "Esquirol (A)",
                     site: "www.jacobins.mairie-toulouse.fr",
-                    //gestionnaire: gestionnaireMusee,
+                    gestionnaire: gestionnaireMusee,
                     adresse: adrePa,
                     favori: "non"
 
             ).save(flush: true)
 
-            //parmu = museeService.insertOrUpdateMuseeForGestionnaire(parmu,gestionnaireMusee)
+            parmu = museeService.insertOrUpdateMuseeForGestionnaire(parmu,gestionnaireMusee)
         }
     }
 
-    def supprimerDuGestionnnaire(Musee musee) {
-        gestionnaireMusee.removeFromMusees(musee)
+    def supprimerDuGestionnnaire(Musee muse) {
+        gestionnaireMusee.removeFromMusees(muse)
         gestionnaireMusee.save(flush: true)
     }
 
