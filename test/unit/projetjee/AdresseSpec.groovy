@@ -19,21 +19,26 @@ class AdresseSpec extends Specification {
         expect: "l'adresse est valide"
         adresse.validate() == true
 
+        where:
+        numeroA     | rue       | ville       | codePostal
+        "un numero" | "une rue" | "une ville" | "codepostal"
+
+
     }
 
     @Unroll
-    void "test l'invalidite d'une adresse non valide"(String unNum,String uneRue, String uneVille, String unCode) {
+    void "test l'invalidite d'une adresse non valide"(String unNum, String uneRue, String uneVille, String unCode) {
 
         given: "une adresse initialise avec les paramètres vides"
-        Adresse adresse = new Adresse(numeroA: unNum,rue: uneRue,ville: uneVille,codePostal: unCode)
+        Adresse adresse = new Adresse(numeroA: unNum, rue: uneRue, ville: uneVille, codePostal: unCode)
 
         expect: "l'adresse est invalide"
         adresse.validate() == false
 
         where:
-        unNum   | uneRue | uneVille | unCode
-        null   |  null  | null     | null
-        ""     | ""     | ""       |""
+        unNum | uneRue | uneVille | unCode
+        null  | null   | null     | null
+        ""    | ""     | ""       | ""
 
 
     }
@@ -41,8 +46,8 @@ class AdresseSpec extends Specification {
     @Unroll
     void "test la fonction listUnique"() {
         given: "deux musees initialise avec la meme adresse"
-        Adresse adresse = new Adresse(numeroA: "1",rue: "uneRue",ville: "uneVille",codePostal: "31000").save(flush: true)
-        Adresse aliasadresse = new Adresse(numeroA: "unNum",rue: "uneRue",ville: "uneVille",codePostal: "31000").save(flush: true)
+        Adresse adresse = new Adresse(numeroA: "1", rue: "uneRue", ville: "uneVille", codePostal: "31000").save(flush: true)
+        Adresse aliasadresse = new Adresse(numeroA: "unNum", rue: "uneRue", ville: "uneVille", codePostal: "31000").save(flush: true)
 
         expect: "le resultat doit etre un seul element"
         Adresse.listUnique().size() == 1
