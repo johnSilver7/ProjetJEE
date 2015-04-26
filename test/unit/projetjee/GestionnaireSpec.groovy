@@ -19,6 +19,12 @@ class GestionnaireSpec extends Specification {
         expect: "le gestionnaire est valide"
         gestion.validate() == true
 
+        where:
+
+        nom      | _
+        ""       | _
+        "un nom" | _
+
     }
 
     @Unroll
