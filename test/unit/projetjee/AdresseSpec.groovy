@@ -38,4 +38,14 @@ class AdresseSpec extends Specification {
 
     }
 
+    @Unroll
+    void "test la fonction listUnique"() {
+        given: "deux musees initialise avec la meme adresse"
+        Adresse adresse = new Adresse(numeroA: "1",rue: "uneRue",ville: "uneVille",codePostal: "31000").save(flush: true)
+        Adresse aliasadresse = new Adresse(numeroA: "unNum",rue: "uneRue",ville: "uneVille",codePostal: "31000").save(flush: true)
+
+        expect: "le resultat doit etre un seul element"
+        Adresse.listUnique().size() == 1
+    }
+
 }
