@@ -54,6 +54,13 @@ class MuseeServiceIntegrationSpec extends Specification {
         and:"Ajout aux favoris"
         List<Musee> listeMusee=MuseeService.ajoutFavori(resultMusee.nom)
 
+        and:"Recherche d'un gestionnaire"
+        List<Gestionnaire> listeGest=MuseeService.searchGestionnaire(gestion.nom)
+
+        and:"Suppression de favori"
+
+        List<Musee> listeMus=MuseeService.deleteFavori(resultMusee.nom)
+
     }
 
 
