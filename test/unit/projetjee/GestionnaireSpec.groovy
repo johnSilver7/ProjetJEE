@@ -31,8 +31,17 @@ class GestionnaireSpec extends Specification {
         gestion.validate() == false
 
 
+    }
+
+    @Unroll
+    void "test la fonction toString"() {
+
+        given:
+        "un gestionnaire initialise avec un nom"
+        Gestionnaire gestion = new Gestionnaire(nom: "unNom")
 
 
-
+        expect: "l'adresse est invalide"
+        gestion.toString() == "unNom"
     }
 }
