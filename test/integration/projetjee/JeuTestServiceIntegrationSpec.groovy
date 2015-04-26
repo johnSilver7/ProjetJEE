@@ -8,19 +8,19 @@ import spock.lang.*
  */
 class JeuTestServiceIntegrationSpec extends Specification {
 
-   /* JeuTestService jeuTestService
+    JeuTestService jeuTestService
 
 
     void "test creation jeu de tests pour musees"() {
 
         given:"la liste de musee est vide au debut"
-        Musee.count() == 0
+        Musee.list().size() == 0
 
         when: "on crée le jeu de test pour les musees"
         jeuTestService.createJeuTestforMusee()
 
         then: "7 nouveaux musees ont été crées en base"
-        Musee.count() == 6
+        Musee.list().size() == 6
 
         and:"on tente de supprimer un gestionnaire"
 
@@ -36,8 +36,5 @@ class JeuTestServiceIntegrationSpec extends Specification {
         adresse1.save(flush: true)
         gestion.save(flush: true)
 
-        and:"on tente de supprimer"
-        jeuTestService.supprimerDuGestionnnaire(unMusee)
-
-    }*/
+    }
 }

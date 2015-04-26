@@ -155,9 +155,5 @@ class JeuTestService {
         }
     }
 
-    def supprimerDuGestionnnaire(Musee muse) {
-        gestionnaireMusee.removeFromMusees(muse)
-        gestionnaireMusee.save(flush: true)
-    }
 
 }
