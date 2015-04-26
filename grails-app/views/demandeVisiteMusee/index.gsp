@@ -29,7 +29,7 @@
 
 
 			<g:if test="${"${erreur}" == "err_pers"}">
-				<div class="message" role="status">ERREUR, le nombre maximum de visiteur est de 6</div>
+				<div class="message" role="status">ERREUR, le nombre maximum de visiteur est de 6 et doit être un nombre</div>
 			</g:if>
 
 			<g:form>

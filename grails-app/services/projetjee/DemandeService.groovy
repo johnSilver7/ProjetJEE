@@ -22,6 +22,11 @@ class DemandeService {
 
         }
 
+        if (dateDebut.length() > 10 || dateFin.length() > 10 ) {
+            erreur = 'err_date'
+            return  erreur
+        }
+
         Date date1
         Date date2
         DateFormat df = new SimpleDateFormat("yyyy.MM.dd");
@@ -34,12 +39,17 @@ class DemandeService {
         }
         Date today = new Date()
 
-        if (date1 < today || date2 < today  || date1 > date2) {
+        if (date1 < today || date2 < today || date1 > date2) {
             erreur = 'err_date'
+            return erreur
+        }
+
+        if(!nbPersonne.isInteger()) {
+            erreur = 'err_pers'
             return  erreur
         }
 
-        if (nbPersonne == '0' || nbPersonne == 'null' || !nbPersonne || nbPersonne.toInteger() > 6) {
+        if (nbPersonne == 'null' || !nbPersonne || nbPersonne.toInteger() > 6 || nbPersonne.toInteger() <= 0) {
             erreur = 'err_pers'
             return erreur
         }
@@ -55,7 +65,7 @@ class DemandeService {
                 status: "en cours de traitement"
         ).save(flush: true)
 
-        List <Musee> unMusee = museeService.searchUnMusee(musee)
+        List<Musee> unMusee = museeService.searchUnMusee(musee)
         String date = today.toString()
         demandeVisite = new DemandeVisiteMusee(
                 dateDemande: date,
