@@ -11,15 +11,19 @@ import spock.lang.Unroll
 class MuseeSpec extends Specification {
 
 
-
     @Unroll
     void "test la validite d'un  musee valide"() {
 
         given: "un musee initialise avec des paramètres non vide"
-        Musee musee = new Musee(nom: "un nom", horairesOuverture: "horaire", telephone: "num telephone", accesMetro: "acces", site: "site", gestionnaire: new Gestionnaire(nom: "Dupont"), adresse: new Adresse( numeroA: "11", rue: "RUE DE ROSSAIRE", ville: "PARIS", codePostal: "81000" ), favori: "favori")
+        Musee musee = new Musee(nom: "un nom", horairesOuverture: "horaire", telephone: "num telephone", accesMetro: "acces", site: "site", gestionnaire: new Gestionnaire(nom: "Dupont"), adresse: new Adresse(numeroA: "11", rue: "RUE DE ROSSAIRE", ville: "PARIS", codePostal: "81000"), favori: "favori")
 
         expect: "le musee est valide"
         musee.validate() == true
+
+        where:
+        unNom    | horaire   | phone           | metro   | site   | gestionnaire                    | favo
+        "un nom" | "horaire" | "num telephone" | "acces" | "site" | new Gestionnaire(nom: "Dupont") | "favori"
+
 
     }
 
